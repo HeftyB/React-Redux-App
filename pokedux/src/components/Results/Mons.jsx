@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import pokeLoad from "../../photos/pokeLoad.jpg"
 
 function Mons(props) {
     const { 
@@ -19,20 +20,24 @@ function Mons(props) {
         buttonLabel,
         className } = props.currentPageData;
 
+
         const [modal, setModal] = useState(false);
 
         const toggle = () => setModal(!modal);
         
-        debugger
-
-    return (
+        // console.log(sprites.front_defualt)
+        // sprites.front_default ?
+        return (
         <div className="mons">
             <h1>{`Name: ${props.currentPageData.name}`}</h1>
             <div class="card">
                 <div class="card-header">{name}</div>
                 <div class="card-body">
-                    {/*img when this is done being stupid*/}
-                    {/* <img src={sprites.front_shiny}></img> <h6>....sprite is loading...</h6> */}
+                    { sprites ? <img src={sprites.front_default} className="sprites"/> : <img src={pokeLoad} className="loading"/> }
+                    {/* <img src={ sprites ? sprites.front_default : pokeLoad} alt="img"/>   */}
+                    {/* :  */}
+                    {/* <h6>....sprite is loading...</h6> */}
+                    {/* } */}
                     <div>
                         <p>
                             {`${name}'s`}
@@ -59,6 +64,11 @@ function Mons(props) {
             </div>
         </div>
     )
+    //  : return (
+    //     <div className="loading">
+    //         <h1>....mon is loading.......</h1>
+    //     </div>
+    // )
 }
 
 const mapStateToProps = state => {

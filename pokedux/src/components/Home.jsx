@@ -19,7 +19,7 @@ function Home(props) {
         links.push(
             <div className="linkCard" key={keys}>
                 <Card body>
-                <CardTitle>{`Search by: ${property}`}</CardTitle>
+                <CardTitle>{`Browse by: ${property}`}</CardTitle>
                 <Link to={`/${property}`}>
                     <Button onClick={() => getData(initialLinks[property])}>{`Go!`}</Button>
                 </Link>

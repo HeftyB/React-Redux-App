@@ -36,7 +36,7 @@ const initialState = {
     // palParkArea : "https://pokeapi.co/api/v2/pal-park-area/",
     // pokeathlonStat : "https://pokeapi.co/api/v2/pokeathlon-stat/",
     pokedex : "https://pokeapi.co/api/v2/pokedex/",
-    pokemon : "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0",//pokemon : "https://pokeapi.co/api/v2/pokemon/",
+    pokemon : "https://pokeapi.co/api/v2/pokemon?limit=600&offset=0",//pokemon : "https://pokeapi.co/api/v2/pokemon/",
     // pokemonColor : "https://pokeapi.co/api/v2/pokemon-color/",
     // pokemonForm : "https://pokeapi.co/api/v2/pokemon-form/",
     // pokemonHabitat : "https://pokeapi.co/api/v2/pokemon-habitat/",
