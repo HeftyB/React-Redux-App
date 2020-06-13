@@ -36,7 +36,7 @@ const initialState = {
     // palParkArea : "https://pokeapi.co/api/v2/pal-park-area/",
     // pokeathlonStat : "https://pokeapi.co/api/v2/pokeathlon-stat/",
     pokedex : "https://pokeapi.co/api/v2/pokedex/",
-    pokemon : "https://pokeapi.co/api/v2/pokemon?limit=600&offset=0",//pokemon : "https://pokeapi.co/api/v2/pokemon/",
+    pokemon : "https://pokeapi.co/api/v2/pokemon?limit=807&offset=0",//pokemon : "https://pokeapi.co/api/v2/pokemon/",
     // pokemonColor : "https://pokeapi.co/api/v2/pokemon-color/",
     // pokemonForm : "https://pokeapi.co/api/v2/pokemon-form/",
     // pokemonHabitat : "https://pokeapi.co/api/v2/pokemon-habitat/",
@@ -52,6 +52,7 @@ const initialState = {
   currentPageData: {
     results: [],
   },
+  mons: [],
   isFetching: false,
   error: ""
 }
@@ -66,13 +67,20 @@ export default function reducers (state = initialState, action) {
         case "GET_DATA_SUCCESS":
           return {
             ...state,
-            currentPageData: action.payload
+            currentPageData: action.payload,
+            isFetching: false
           }
         case "GET_DATA_FAIL":
           return {
             ...state,
             isFetching: false,
             error: action.payload
+          }
+        case "GET_ALL_POKEMON":
+          return {
+            ...state,
+            mons: action.payload,
+            isFetching: false
           }
         default:
             return state;

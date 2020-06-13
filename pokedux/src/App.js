@@ -11,6 +11,7 @@ import Pokedex from "./components/Results/Pokedex";
 import Location from "./components/Results/Location";
 import Generation from "./components/Results/Generation";
 import Mons from "./components/Results/Mons";
+import Pokemon from "./components/Results/Pokemon"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Results/>
           </Route>
           <Route path={`/pokemon`}>
+            {/* <Pokemon/> */}
             <Name/>
           </Route>
           <Route path={`/version`}>

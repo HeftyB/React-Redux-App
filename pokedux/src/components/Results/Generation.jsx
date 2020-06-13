@@ -11,12 +11,13 @@ import {
 
 
 export const Generation = (props) => {
-    const { currentPageData } = props;
+    const { currentPageData, getData } = props;
     let links = currentPageData.results.map( item => {
         console.log(item.url)
         return  <div>
             <Card>
-                <Button onClick={() => {console.log("click");getData(item.url)}}>{item.name}</Button>
+                {/* </Card><Link to= */}
+                <Button onClick={() => getData(item.url)}>{item.name}</Button>
             </Card>
         </div>
     })

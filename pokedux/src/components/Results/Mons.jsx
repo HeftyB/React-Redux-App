@@ -7,6 +7,7 @@ function Mons(props) {
     const { 
         abilities, 
         forms, 
+        base_experience,
         game_indices, 
         height, 
         id, 
@@ -19,6 +20,26 @@ function Mons(props) {
         weight,
         buttonLabel,
         className } = props.currentPageData;
+        if (sprites) {
+            let movess = moves.map( item => {
+                return (<p>{item.move.name}</p>)
+            })
+            let abilitiess = abilities.map( item => {
+                return (
+                    <p>{item.ability.name}</p>)
+            })
+            let game_indicess = game_indices.map( item => {
+                return (<p>{item.version.name}</p>)
+            })
+            // let moves = item.moves.map()
+            // let sprites = item.sprites -- object
+            let typess = types.map( item => {
+            return(<p>{item.type.name}</p>)
+            })
+            let statss = stats.map( item => {
+            return(<p>{`${item.stat.name} : ${item.base_stat}`}</p>)
+            })
+        }
 
 
         const [modal, setModal] = useState(false);
@@ -31,21 +52,40 @@ function Mons(props) {
         <div className="mons">
             <h1>{`Name: ${props.currentPageData.name}`}</h1>
             <div class="card">
-                <div class="card-header">{name}</div>
-                <div class="card-body">
+                <div className="card-header">{name}</div>
+                <div className="card-body">
                     { sprites ? <img src={sprites.front_default} className="sprites"/> : <img src={pokeLoad} className="loading"/> }
                     {/* <img src={ sprites ? sprites.front_default : pokeLoad} alt="img"/>   */}
                     {/* :  */}
                     {/* <h6>....sprite is loading...</h6> */}
                     {/* } */}
                     <div>
-                        <p>
+                        {/* <p> */}
                             {`${name}'s`}
                             <br/>
                             Height: {height}
                             <br/>
                             Weight: {weight}
-                        </p>
+                            {/* {item.name}
+                            {item.weight}
+                            {item.height} */}
+                            id#: {id}
+                            Base Experience: {base_experience}
+                            <a href={location_area_encounters}>Location area encounters</a>
+                            <div>
+                                {moves}
+                            </div>
+                            {/* <div>
+                                {abilities}
+                            </div>                           */}
+                                {game_indices}
+                            <div>                            
+                                {types}
+                            </div>                            
+                            <div>
+                                {stats}
+                            </div>
+                        {/* </p> */}
                     </div>
                     <div>
                         <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
